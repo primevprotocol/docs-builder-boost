@@ -3,12 +3,11 @@ import adapter from '@sveltejs/adapter-auto';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   extensions: ['.svelte', '.md'],
-
   kit: {
     adapter: adapter(),
 
     prerender: {
-      default: true,
+//      default: false,
       entries: ['*'],
       handleMissingId: 'warn',
     },
