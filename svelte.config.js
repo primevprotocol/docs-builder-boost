@@ -7,6 +7,7 @@ const config = {
     adapter: adapter(),
 
     prerender: {
+      handleHttpError: 'warn',
 //      default: false,
       entries: ['*'],
       handleMissingId: 'warn',

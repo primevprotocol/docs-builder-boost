@@ -1,33 +1,10 @@
 ---
-title: Primev Network Details
-description: The Primev data layer grants real-time access to execution data pertaining to block templates, also known as builder hints, and facilitates the seamless transmission of this data to connected entities.
+title: Pilot Program Details and Transition to Mainnet
+description: Primev will be operational on the Ethereum mainnet. However for the pilot program, the Registry Contract has been deployed on the Sepolia testnet so users can start using the service without paying real ETH. It's important to note that the Sepolia registry is intended for mainnet data and enables searchers to deposit Sepolia ETH in order to access builder hints. 
 ---
 
 # {$frontmatter.title}
 
 {$frontmatter.description}
 
-### Primev Details:
-
-**(Sepolia) Primev Contract**: [0x6e100446995f4456773Cd3e96FA201266c44d4B8](https://sepolia.etherscan.io/address/0x6e100446995f4456773Cd3e96FA201266c44d4B8)
-
-
-### Example builder-boost payload
-    
-```javascript
-{
-"builder":"0xaa1488eae4b06a1fff840a2b6db167afc520758dc2c8af0dfb57037954df3431b747e2f900fe8805f05d635e9a29717b",
-"number":17671850,
-"blockHash":"0x9061da7322df7293f00ad84810f767504de083d7a7b483e84f0f4de1d5bc0130",
-"timestamp":"Tue, 11 Jul 2023 17:27:11 UTC",
-"baseFee":2316406169,
-"standard_transactions":{
-    "count":154,
-    "MinPriorityFee":0,
-    "MaxPriorityFee":200000000000
-},
-"personal_transactions":[],
-"sent_timestamp":"2023-07-11T17:27:10.691343244Z",
-"rec_timestamp":"2023-07-11T17:27:10.656115905Z"
-}
-```
+When the pilot program concludes, the registry contract will be deployed to the Ethereum mainnet, requiring existing connections to be re-established.
