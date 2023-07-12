@@ -38,7 +38,7 @@ To this end, a key starting point for the system is for builder nodes to ***rela
 
 ## Detailed Actor Interactions
 
-![Actor Overview.png](../../../../img/Actor%20Overview.png)
+![Actor Overview.png](../../../../img/)
 
 ### **Interface Modification (Builder)**
 
