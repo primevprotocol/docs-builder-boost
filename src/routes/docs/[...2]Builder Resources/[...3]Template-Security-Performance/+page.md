@@ -18,11 +18,11 @@ The inclusion of an extra relay is solely aimed at streamlining the integration 
 
 The impact on system performance is minimal. Incorporating additional computation into a system always carries some costs. However, to prevent sequential  blocking, the boost call is executed in a dedicated, short-lived go-routine. Moreover, this impact is mitigated by the fact that we make only a single HTTP call, utilizing data that is already allocated on the heap for the MEV Relays (Flashbots) operation.
 
-******************Where does Geth construct the payload being sent to builder-boost?******************
+**Where does Geth construct the payload being sent to builder-boost?**
 
 Geth has already allocated the payload in the heap to send it to MEV Relays(Flashbots). We just obtain a read-only reference to the data to ensure that we can also send it to your primev Builder Boost sidecar
 
-************************************************Security Considerations?************************************************
+Security Considerations?
 
 To safeguard your builder-boost sidecar, we employ a share-secret authentication mechanism that can be configured in both the Builder Boost and Modified Geth instances. This setup ensures that malicious payloads cannot be posted to your Builder Boost instance.
 

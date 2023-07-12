@@ -13,7 +13,7 @@ description: The technical motivation of the Primev network is to disseminate me
 
 **Builder** - Is the organization that owns Private Keys associated with block builders. A single *builder* can own multiple private keys, and thus control multiple block builders.
 
-**********************Searcher********************** - Is the entity that **********currently********** consumes data from the Primev network and is identified by their address.
+******Searcher****** - Is the entity that **currently** consumes data from the Primev network and is identified by their address.
 
 **Builder Boost** - The name of the client software that sits as a sidecar and allows *Builders* to enable Primev.
 
@@ -140,7 +140,7 @@ There’s an implied trust in Builders due to their ability to store the private
 
 ## Rollup Details
 
-The Rollup can be thought of as the authorization server for the Primev protocol. It allows ************************Builders************************ to set minimum payment requirements to connect.
+The Rollup can be thought of as the authorization server for the Primev protocol. It allows Builders to set minimum payment requirements to connect.
 
 ## Endpoints
 
