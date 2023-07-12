@@ -5,8 +5,9 @@
   import '@svelteness/kit-docs/client/styles/theme.css';
   import '@svelteness/kit-docs/client/styles/vars.css';
 
+
   import { page } from '$app/stores';
-  import SvelteLogo from '$img/svelte-horizontal.svg?raw';
+  import PrimevLogo from '$img/favicon.png';
 
   import { Button, KitDocs, KitDocsLayout, createSidebarContext } from '@svelteness/kit-docs';
 
@@ -42,7 +43,7 @@
   <KitDocsLayout {navbar} {sidebar}>
     <div class="logo" slot="navbar-left">
       <Button href="/">
-        {@html SvelteLogo}
+        <img src={PrimevLogo} alt="primev" width="100"/>
       </Button>
     </div>
 
