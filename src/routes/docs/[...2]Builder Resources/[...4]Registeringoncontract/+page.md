@@ -7,21 +7,25 @@ description: You must register yourself as a builder on the primev contract to e
 # {$frontmatter.title}
 
 {$frontmatter.description}
-    
-**Builders set two parameters when registering with Primev:**
 
-These parameters will allow you to set the price searchers must pay for access to your Builder-Boost payloads. 
+## Open Primev Contract in Etherscan
 
-- `_minimalStake`: minimal amount for searcher to deposit to this builder in order to start receiving builder hints
-- `_minimalSubscriptionPeriod`:  parameter represents the number of **Blocks/Slots** that a searcher would connect per `_minimalStake` deposited. The rate progresses linearly as follows:
-```    
-$$T_{Subscription} := 0\  \text{if}\ stake_{searcher} < stake_{minimum}
-$$
+Head to [Update Builder Method](https://sepolia.etherscan.io/address/0x6e100446995f4456773Cd3e96FA201266c44d4B8#writeContract#F4) in Etherscan. This method allows you to register new builder or update settings for existing builder.
 
-$$
-T_{Subscription} := stake_{searcher} * (stake_{minimum}/T_{sub\ min})\  \text{if}\ stake_{searcher} \geq stake_{minimum}
-$$
-```
+## Connect Web3 Wallet
+
+On the top left corner of the **Write Contract** section press **Connect to Web3**. Make sure you use the builder address (the one you use for running the builder geth instance). This address should be funded with some Sepolia ETH to cover transaction costs.
+
+## Specify Builder Parameters and Register
+
+In the `updateBuilder` method there are 2 fields to specify:
+
+- `_minimalStake`: The minimal amount for a searcher to deposit to this builder in order to start receiving builder hints.
+- `_minimalSubscriptionPeriod`: The minimal subscription period given to a searcher for depositing the minimal stake. If the searcher deposits more than the minimal stake, the subscription period will be extended linearly.
+
+After all the required fields are specified, press the **Write** button and confirm the transaction using your Web3 provider. Once the transaction is confirmed, searchers could start depositing to your builder. Make sure you run the builder boost instance before registering a new builder.
+
+### Revenue Details
 
 The `_minimalSubscriptionPeriod` parameter represents the number of **Blocks/Slots** that a perspective searcher is allowed to connect for. We recommend setting 90 Days as the `_minimalStake` and 0.1 ETH as the `_minimalStake`
     
@@ -35,3 +39,4 @@ The `_minimalSubscriptionPeriod` parameter represents the number of **Blocks/Slo
 | 1 year | 2,628,000 | 0.41 ETH | 0.328 ETH |
 
 **Note that 80% of funds accrue to the Builder who has registered and 20% to a Primev EOA**
+

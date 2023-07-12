@@ -11,6 +11,13 @@ description: The Primev data layer grants real-time access to execution data per
 
 **(Sepolia) Primev Contract**: [0x6e100446995f4456773Cd3e96FA201266c44d4B8](https://sepolia.etherscan.io/address/0x6e100446995f4456773Cd3e96FA201266c44d4B8)
 
+If you need Sepolia ETH, you can use the below faucets:
+
+- [Infura Sepolia Faucet](https://www.infura.io/faucet/sepolia)
+- [Paradigm Testnet Faucet](https://faucet.paradigm.xyz/)
+
+let us know if you’re unable to get any Sepolia ETH and we’ll assist.
+
 
 ### Example builder-boost payload
     
