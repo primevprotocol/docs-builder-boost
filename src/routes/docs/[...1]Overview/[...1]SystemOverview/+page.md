@@ -6,6 +6,14 @@ description: The technical motivation of the Primev network is to disseminate me
 # {$frontmatter.title}
 
 {$frontmatter.description}
+<script>
+import { Button } from '@svelteness/kit-docs';
+import BuilderMods from '$img/BuilderModificationWalkthrough.png';
+import ActorOverview from '$img/ActorOverview.png';
+import PrimevOverview from '$img/primev-overview.png';
+import SearcherAuthNow from '$img/searcher-auth-now.png';
+import SearcherAuthFuture from '$img/searcher-auth-future.png';
+</script>
 
 ## Terminology
 
@@ -23,11 +31,11 @@ The technical motivation of the Primev network is to disseminate metadata about 
 
 To this end, a key starting point for the system is for builder nodes to ***relay*** templates/execution payloads to to Builder Boost, which Builder Organizations will self-host.
 
-![Builder Modification Walkthrough.png](../../../../img/BuilderModificationWalkthrough.png)
+<img src={BuilderMods}  alt="primev" width="100%"/>
 
 
 <aside>
-💡 Builder Boost is a sidecar that sits within the builders custody. Therefore, ***no raw templates are ever revealed*** to the Primev network.
+Builder Boost is a sidecar that sits within the builders custody. Therefore, no raw templates are ever revealed to the Primev network.
 
 </aside>
 
@@ -38,7 +46,7 @@ To this end, a key starting point for the system is for builder nodes to ***rela
 
 ## Detailed Actor Interactions
 
-![Actor Overview.png](../../../../img/)
+<img src={ActorOverview} alt="actor overview" width="100%"/>
 
 ### **Interface Modification (Builder)**
 
@@ -66,7 +74,7 @@ We use the relay API to simplify the integration process for Builder Organizatio
 
 ### Templates Processing
 
-![primev-overview.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/795ef899-81b7-4ff9-87a8-7524445b5a47/primev-overview.png)
+<img src={PrimevOverview} alt="primev overview" width="100%"/>
 
 Notice in the diagram above, the flow of templates follow the following pattern:
 
@@ -111,7 +119,6 @@ Only the builder with the password set in Builder Boost Environment variable wil
 
 <aside>
 ❗ Keep X-BUILDER-TOKEN private, do not share it outside your builder organization
-
 </aside>
 
 ## Searchers Auth
@@ -126,13 +133,13 @@ After authenticating each other, the searcher receives a unique token that it mu
 
 The diagram below, showcases the high-level flow:
 
-![Searcher Auth - now.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af5272e9-5b37-4456-956b-f5ae83787829/Searcher_Auth_-_now.png)
+<img src={SearcherAuthNow} alt="searcher auth now" width="100%"/>
 
 ## Optional - Dual Authentication of Builders (Coming Soon)
 
 We plan to add a step in which a Builder can provide a self-signed URL, to authenticate the URL as owning the Address being connected to (Note: This defers the security of the authentication to the DNS resolution of the URL or Public Key Infrastructure (PKI)). It would be up to the Searcher to verify the signature. However, in the current model, there is an assumed level of trust towards builders.
 
-![Searcher Auth - Future.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d6e6eb3d-ca50-45e5-b557-c5b44d7529c9/Searcher_Auth_-_Future.png)
+<img src={SearcherAuthFuture} alt="searcher auth future" width="100%"/>
 
 ## General Security Model
 
