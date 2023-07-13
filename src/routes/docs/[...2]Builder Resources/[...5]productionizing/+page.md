@@ -8,13 +8,18 @@ description: The core task for you as a builder is to get Boost up and running. 
 
 {$frontmatter.description}
 
+<script>
+    import BBDiagram from '$img/builder-boost-diagram.png';
+    import Security from '$img/security.png';
+</script>
+
 # Running builder-boost
 
 Builder Boost is a software sidecar module that facilitates a blockbuilder’s participation in the Primev network. The diagram below outlines the module’s position within a builder's local environment.
 
 ## **Builder Boost Diagram**
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/79b26966-f789-4875-8016-936e66d193cc/Untitled.png)
+<img src={BBDiagram} alt="builder boost diagram" width="100%"/>
 
 ## **Prerequisites**
 
@@ -110,7 +115,7 @@ A key reason to keep builder-boost as a sidecar in the builder’s own environme
 
 To ensure the integrity of the payloads that are being constructed we’ve implemented a shared secret authentication between the builder and the builder-boost instance. As long as the the Builder constructs a **secure password and keeps it secret**, the setup gives strong assurances over the integrity of the payloads being published and the metadata being sent to searchers.
 
-![Security.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9567a0fa-eec3-4801-8fb6-7067e093eb6d/Security.png)
+<img src={Security} alt="Security Diagram" width="100%"/>
 
 ### Availability Provisions
 

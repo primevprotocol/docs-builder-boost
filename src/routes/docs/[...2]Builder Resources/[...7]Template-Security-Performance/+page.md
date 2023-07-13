@@ -8,11 +8,15 @@ description: You may have questions about the safety of your block templates whe
 
 {$frontmatter.description}
 
+<script>
+import ClarificationRelay from '$img/clarification-relay.png';
+</script>
+
 In the builder requirements, an additional relay is introduced to your Builder Implementation. However, it's crucial to note that this does not imply that payloads are sent out of your builder environment.
 
 The inclusion of an extra relay is solely aimed at streamlining the integration process with your Primev Builder Boost sidecar. Here is a simplified example of a Primev-enabled builder setup
 
-![clarification-relay.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f3e9742-041a-4a7d-b752-c4771ddc777b/clarification-relay.png)
+<img src={ClarificationRelay} width="100%" alt="Clarification of design of relay"/>
 
 **Would I incur any performance cost from sending Block Templates to Boost?**
 

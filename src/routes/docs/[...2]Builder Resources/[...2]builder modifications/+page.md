@@ -8,6 +8,9 @@ description: In this document, we provide both a general overview of the small c
 
 {$frontmatter.description}
 
+<script>
+import TemplateGeneration from '$img/block-gen.png';
+</script>
 
 
 > Please reach out to us if you need any assistance.
@@ -17,7 +20,7 @@ description: In this document, we provide both a general overview of the small c
 
 Builder-boost sits as a sidecar to your execution client. Builder will consistently spin up lightweight go-routines to POST new templates.
 
-![https://hackmd.io/_uploads/S1f74n0Vh.png](https://hackmd.io/_uploads/S1f74n0Vh.png)
+<img src={TemplateGeneration} alt="block template generation" width="100%"/>
 
 # **Quickstart (5 mins)**
 
