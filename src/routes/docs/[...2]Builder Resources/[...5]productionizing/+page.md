@@ -10,7 +10,7 @@ description: The core task for you as a builder is to get Boost up and running. 
 
 <script>
     import BBDiagram from '$img/builder-boost-diagram.png';
-    import Security from '$img/security.png';
+    import Security from '$img/Security.png';
 </script>
 
 # Running builder-boost
