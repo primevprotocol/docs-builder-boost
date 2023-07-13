@@ -7,6 +7,11 @@ description: We take the privacy of Searchers seriously at Primev.
 
 {$frontmatter.description}
 
+
+<script>
+import SecurityDiagram from '$img/searcher-privacy-diagram.png';
+</script>
+
 We’ve designed our protocol to protect the privacy of searchers in two fold:
 
 - Identity & connection privacy
@@ -15,7 +20,7 @@ We’ve designed our protocol to protect the privacy of searchers in two fold:
 
 That’s why our protocol consists of a variety of controls to ensure pseudonymity for searchers.
 
-# Searcher Privacy
+## Searcher Privacy
 
 Primev contracts store data that can be leveraged to get a sense of which builders and searchers are connected. To control for this we’ve implemented the following simple commitment mechanism to protect the privacy of searchers
 ```
@@ -25,7 +30,8 @@ $$
 ```
 c is the commitment that get’s added to the rollup. A more detailed flow of data is highlighted below:
 
-![Screenshot 2023-06-15 at 4.25.48 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d3d082bc-e9ce-4771-9b0f-efb6a6a1a725/Screenshot_2023-06-15_at_4.25.48_PM.png)
+
+<img src={SecurityDiagram} alt="security diagram" width="100%"/>
 
 To open the commitment, someone requires:
 ```
