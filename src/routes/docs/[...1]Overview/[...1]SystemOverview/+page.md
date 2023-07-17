@@ -1,6 +1,6 @@
 ---
 title: System Overview
-description: The technical motivation of the Primev network is to disseminate metadata about block templates (also known as execution payloads) in realtime and route them to relevant parties; in the current case these are searchers.
+description: Technical overview of the primev protocol.
 ---
 
 # {$frontmatter.title}
