@@ -27,7 +27,7 @@ After all the required fields are specified, press the **Write** button and conf
 
 ### Revenue Details
 
-The `_minimalSubscriptionPeriod` parameter represents the number of **Blocks/Slots** that a perspective searcher is allowed to connect for. We recommend setting 90 Days as the `_minimalStake` and 0.1 ETH as the `_minimalStake`
+The `_minimalSubscriptionPeriod` parameter represents the number of **Blocks/Slots** that a perspective searcher is allowed to connect for. We recommend setting 648,000 (90 Days) as the `_minimalSubscriptionPeriod` and 0.1 ETH as the `_minimalStake`
     
     
 | Time Period | Number of Slots/Blocks | Cost - Rate of 0.1 ETH  / 90 Days | Builder Revenue (80%)  |
