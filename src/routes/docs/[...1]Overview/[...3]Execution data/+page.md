@@ -1,5 +1,5 @@
 ---
-title: Primev Network Details
+title: Execution data
 description: The Primev data layer grants real-time access to execution data pertaining to block templates, also known as builder hints, and facilitates the seamless transmission of this data to connected entities.
 ---
 
