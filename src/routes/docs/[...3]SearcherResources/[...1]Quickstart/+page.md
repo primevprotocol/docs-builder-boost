@@ -7,24 +7,45 @@ description: Start consuming execution data
 
 {$frontmatter.description}
 
-## Step 1: Obtain Commitment Hash from Builders
+# Searcher Documentation
 
-1. Run your Searcher instance with the correct `SEARCHER_KEY` and `BOOST_ADDR` variables. Make sure you're taking note of the `token` parameter, which is logged when you run this instance.
 
-2. Send an HTTP request to the builder endpoint to get the commitment hash. This hash is unique for each searcher-builder pair. The `token` parameter mentioned in the first step should be specified in this request.
+<script>
+    import Reg from '$img/contractreg.png';
+</script>
 
-   - For example, if `http://localhost:18550` is your builder boost endpoint and `ABCD` is your searcher token for this builder, your HTTP request would be:
 
-```shell
-$ curl http://localhost:18550/commitment?token=ABCD
+**Step 1. First construct the Authentication Token.**
+
+The Authentication Token is similar to Flashbots Authentication Token [here](https://docs.flashbots.net/flashbots-auction/searchers/advanced/rpc-endpoint#authentication), but with a fixed payload of the builder address.
+
+The Authentication is passed in as a header: X-Primev-Signature, however instead of signing an arbitrary payload, the signature is made for **our builder address**, your searcher address is passed as the prefix: `<Searcher Address>:<Signature(Builder Address)>`
+
+Here is a go snippet to construct the token for our service:
+
+```
+msg := <Insert-Your-Builder-Address-Here> // Searchers can retrieve this from the builder info 
+hash := crypto.Keccak256Hash([]byte(msg)).Hex()
+signature, err := crypto.Sign(accounts.TextHash(hash), searcherPrivateKey) // We use an EIP 
+token := crypto.PubkeyToAddress(searcherPrivateKey.PublicKey).Hex() + ":" + hexutil.Encode(sig)
 ```
 
-3. You will receive an output that looks like this:
+**Step 2. Use this token to Receive a special commitment from our Builder**
+
+Make a GET request with `X-Primev-Signature: <token>` to the `/authorization` endpoint. You should receive back a payload as follows:
 
 ```javascript
-{"commitment":"0x688d0031ba0ce02c2049786ca6fd70d04869688dd84d6310b7fdb052d199612f"}
+{
+"commitment": "0xabc"
+}
 ```
 
+
+**Step 3. Connect to the Builder via WebSockets**
+
+Make a GET Request `X-Primev-Signature: <token>` to the `/ws` endpoint
+
+**Congrats! You should be connected!**
 This is your commitment hash.
 
 ## Step 2: Open Primev Contract in Etherscan
@@ -37,6 +58,7 @@ This is your commitment hash.
 2. Make sure you're using the builder address that you used for running the builder geth instance. This address should have some Sepolia ETH to cover transaction costs.
 
 ## Step 4: Specify Deposit Parameters and Send Transaction
+<img src={Reg} alt="Registration flow on contract" width="100%"/>
 
 1. In the `deposit` method, you need to fill in 3 fields:
    - `payableAmount`: Enter the amount of stake you wish to deposit for the specific builder.
