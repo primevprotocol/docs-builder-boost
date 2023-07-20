@@ -1,6 +1,6 @@
 ---
 title: Getting builder-boost Running In Production
-description: The core task for you as a builder is to get Boost up and running. The details to do so are here.
+description: Get builder-boost up and running in production using the below details:
 
 ---
 
@@ -15,9 +15,9 @@ description: The core task for you as a builder is to get Boost up and running. 
 
 # Running builder-boost
 
-Builder Boost is a software sidecar module that facilitates a blockbuilder’s participation in the Primev network. The diagram below outlines the module’s position within a builder's local environment.
+builder-boost is a software sidecar module that facilitates a provider’s participation in the Primev network. The diagram below outlines the module’s position within a provider's local environment.
 
-## **Builder Boost Diagram**
+## **builder-boost Diagram**
 
 <img src={BBDiagram} alt="builder boost diagram" width="100%"/>
 
@@ -27,13 +27,13 @@ Builder Boost is a software sidecar module that facilitates a blockbuilder’s p
 - Updated builder with Primev relay enabled
 - Git
 
-# **Setting Up Builder Boost**
+# **Setting Up builder-boost**
 
-## **Step 1. Ensure Builder is able to send payloads to Builder Boost**
+## **Step 1. Ensure your builder is able to send payloads to builder-boost**
 
 Begin by reviewing the Builder Reference Implementation instructions provided **[here](https://hackmd.io/wmmCgKJdTom9WXht2PcdLA)**. After performing the necessary modifications, you can proceed to set up Builder Boost to receive block templates from your builder.
 
-## **Step 2. Download Boost via GitHub**
+## **Step 2. Download builder-boost via GitHub**
 
 For now, simply do a Git clone:
 
@@ -41,7 +41,7 @@ For now, simply do a Git clone:
 $ git clone git@github.com:primevprotocol/builder-boost.git
 ```
 
-## **Step 3. Build the Boost instance**
+## **Step 3. Build the builder-boost instance**
 
 ```
 $ cd builder-boost
@@ -60,9 +60,9 @@ pythonCopy code
 
 ```
 
-## **Step 4. Run Boost**
+## **Step 4. Run builder-boost**
 
-We highly recommend you use **`systemctl`** to run Boost. The following is a recommended **`systemctl`** file that can be used and placed in your **`/home/systemd/system/<filename>`** folder.
+We highly recommend you use **`systemctl`** to run builder-boost. The following is a recommended **`systemctl`** file that can be used and placed in your **`/home/systemd/system/<filename>`** folder.
 
 ```
 [Unit]
@@ -101,15 +101,15 @@ Note that the **`BUILDER_AUTH_TOKEN`** should be set to the same value set for *
 
 We recommend you run this on a standalone server. This means if you’re running it in a Cloud Environment, ensure you do not share CPU and other core resources with others.
 
-## How many instances of Builder Boost should I run?
+## How many instances of builder-boost should I run?
 
-Currently you can only run a single instance of Builder Boost. We will release updates that builders to run multiple builder-boost instances in the future. The stateful nature of open connections between searchers and builders creates a restriction in the current version.
+Currently you can only run a single instance of builder-boost. We will release an update that will allow builders to run multiple builder-boost instances in the future. The stateful nature of open connections between searchers and builders creates a restriction in the current version.
 
 ## How secure and private is my block template when it’s sent to builder-boost?
 
 ### Confidentiality
 
-A key reason to keep builder-boost as a sidecar in the builder’s own environment is to ensure the privacy of block templates and the underlying bundle & transaction data.
+A key reason of builder-boost's architecture as a sidecar module in the builder’s own environment is to ensure the privacy of block templates and the underlying bundle & transaction data, and having the provider have ultimate control over what's being shared and how.
 
 ### Integrity
 
