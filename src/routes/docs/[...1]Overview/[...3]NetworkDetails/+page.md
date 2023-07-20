@@ -9,7 +9,7 @@ description: The Primev data layer grants real-time access to execution data per
 
 ### Primev Details:
 
-**(Sepolia) Primev Contract**: [0x6e100446995f4456773Cd3e96FA201266c44d4B8](https://sepolia.etherscan.io/address/0x6e100446995f4456773Cd3e96FA201266c44d4B8)
+**(Sepolia) Primev Contract**: [0x6219a236EFFa91567d5ba4a0A5134297a35b0b2A](https://sepolia.etherscan.io/address/0x6219a236EFFa91567d5ba4a0A5134297a35b0b2A)
 
 If you need Sepolia ETH, you can use the below faucets:
 

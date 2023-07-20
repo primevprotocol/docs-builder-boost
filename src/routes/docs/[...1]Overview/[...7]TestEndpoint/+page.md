@@ -40,7 +40,7 @@ description: Searchers can use test Primev Builder endpoint to access payloads. 
 
 **Depositing to Primev Boost account:**
 
-1. Open [Primev smart contract](https://sepolia.etherscan.io/address/0x6e100446995f4456773Cd3e96FA201266c44d4B8#writeContract) in **Write Contract** tab
+1. Open [Primev smart contract](https://sepolia.etherscan.io/address/0x6219a236EFFa91567d5ba4a0A5134297a35b0b2A#writeContract) in **Write Contract** tab
 2. Connect your Web3 wallet, e.g. Metamask
 3. Open **deposit** method
 4. Set **Deposit Amount** to any number higher than 100 wei, **Builder Address** to `0xfE9596C9798571CE953CAd4B8bfDf7586BdD88A9` and **Commitment** to hash received while running searcher instance.

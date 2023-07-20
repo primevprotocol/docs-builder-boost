@@ -10,7 +10,7 @@ description: You must register yourself as a builder on the primev contract to e
 
 ## Open Primev Contract in Etherscan
 
-Head to [Update Builder Method](https://sepolia.etherscan.io/address/0x6e100446995f4456773Cd3e96FA201266c44d4B8#writeContract#F4) in Etherscan. This method allows you to register new builder or update settings for existing builder.
+Head to [Update Builder Method](https://sepolia.etherscan.io/address/0x6219a236EFFa91567d5ba4a0A5134297a35b0b2A#writeContract#F4) in Etherscan. This method allows you to register new builder or update settings for existing builder.
 
 ## Connect Web3 Wallet
 

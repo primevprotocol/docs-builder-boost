@@ -50,7 +50,7 @@ This is your commitment hash.
 
 ## Step 2: Open Primev Contract in Etherscan
 
-1. Go to the [Deposit Method](https://sepolia.etherscan.io/address/0x6e100446995f4456773Cd3e96FA201266c44d4B8#writeContract#F1) on Etherscan. This method allows you to deposit a stake for a specific builder on behalf of the searcher.
+1. Go to the [Deposit Method](https://sepolia.etherscan.io/address/0x6219a236EFFa91567d5ba4a0A5134297a35b0b2A#writeContract#F1) on Etherscan. This method allows you to deposit a stake for a specific builder on behalf of the searcher.
 
 ## Step 3: Connect Web3 Wallet
 
