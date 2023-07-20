@@ -65,10 +65,6 @@ Make a GET request with `X-Primev-Signature: <token>` to the `/authorization` en
 }
 ```
 
-Use this commitment to pay into the smart contract here: @Serhii Varakuta (Would you mind adding details here)
-
-Details around payment (TODO)
-
 **Step 3. Connect to the Builder via WebSockets**
 
 Make a GET Request `X-Primev-Signature: <token>` to the `/ws` endpoint
