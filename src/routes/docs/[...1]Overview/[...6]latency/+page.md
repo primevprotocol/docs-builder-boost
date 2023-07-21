@@ -1,11 +1,29 @@
 ---
 title: Latency
-description: End to End Latency (~50ms) - Total Recorded Blocks (1300)
+description: Latency breakdown for builder-boost
 ---
 
 # {$frontmatter.title}
 
 {$frontmatter.description}
+
+We recorded latency of boost across a variety of situations. There are 3 keys attributes that impact latency, these are:
+1. Wire Latency (~10-20ms)
+2. Core Processing Latency (~10ms)
+3. _Optional- Inclusion List (~5-10ms)_ 
+
+Our intial test with e2e latency for the regular builder-boost instance with inactive inlusion list being consumed by a user in the same aws-west-2 region as the builder-boost is as follows:
+
+
+| Latency Bucket | Blocks Per Bucket | Percentile |
+| --- | --- | --- |
+| <20ms | 18300 | 66% |
+| <30ms | 25473 | 93% |
+| <50ms | 27035 | 99% |
+| <100ms | 27325 | 99.8% |
+Total Recorded Blocks: 27368
+
+With the inclusion lists added, we see an uptick in the latency as follows. Note Inclusion lists is an optional and experimental feature.
 
 
 | Latency Bucket | Blocks Per Bucket | Percentile |
@@ -14,7 +32,4 @@ description: End to End Latency (~50ms) - Total Recorded Blocks (1300)
 | <30ms | 758 | 58% |
 | <50ms | 1251 | 96% |
 | <100ms | 1289 | 99% |
-
-For searchers operating within the same region as a builder boost instance, the average end-to-end latency is typically under 30ms for the majority of payloads. Additionally, it remains below 50ms for approximately 96% of payloads.
-
-It's worth noting that network latency accounts for around 10-20ms of this overall measurement.
+Total Recorded Blocks: 1300
