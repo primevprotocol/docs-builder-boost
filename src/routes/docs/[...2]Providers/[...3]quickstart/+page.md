@@ -24,13 +24,9 @@ The `<private-key>` is the key associated with your payments account in the prim
 
 The `<secret-password>` is the secret value sent in the `X-Builder-Token` header from Builder and is used to authenticate your personal Block Builder Nodes.
 
-<<<<<<<< HEAD:src/routes/docs/[...2]BuilderResources/[...3]quickstart/+page.md
-- Head to [Update Builder Method](https://sepolia.etherscan.io/address/0x6219a236EFFa91567d5ba4a0A5134297a35b0b2A#writeContract#F4) - On top left corner of **Write Contract** section press **Connect to Web3**
-- Fill in `updateBuilder` method with the values of the following 2 fields specified: `<_minimalStake>` and `<_minimalSubscriptionPeriod>`. Press **Write** button and confirm transaction using your Web3 provider. Once transaction is confirmed, searchers could start depositing to your builder.
-========
-- Head to [Update Builder Method](https://sepolia.etherscan.io/address/0x6e100446995f4456773Cd3e96FA201266c44d4B8#writeContract#F4) - On the top left corner of the **Write Contract** section press **Connect to Web3**
+- Head to [Update Builder Method](https://sepolia.etherscan.io/address/0x6219a236EFFa91567d5ba4a0A5134297a35b0b2A#writeContract#F4)  - On the top left corner of the **Write Contract** section press **Connect to Web3**
 - Fill in `updateBuilder` method with the values of the following 2 fields specified: `<_minimalStake>` and `<_minimalSubscriptionPeriod>`. Press the **Write** button and sign the transaction using your Web3 provider. Once the transaction is confirmed, searchers can start authorizing connections to your builder.
->>>>>>>> c15aff8 (move to providers section, minor language edits):src/routes/docs/[...2]Providers/[...3]quickstart/+page.md
+
 
   - `_minimalStake`: minimal amount for searcher to deposit to this builder in order to start receiving builder hints
   - `_minimalSubscriptionPeriod`: minimal subscription period given to searcher for depositing minimal stake. In case searcher deposits more than minimal stake, subscription period will be extended linearly.
