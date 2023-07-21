@@ -1,6 +1,8 @@
 ---	
 title: Transaction Inclusion List	
-description: Boost instances have a toggle option to activate Transaction Inclusion Lists for Searchers to Consume.	
+description: builder-boost instances have a toggle option to activate Transaction Inclusion Lists for Users to gain early visibility into their inclusion.
+
+*this is an experimental feature we're collecting data on during the pilot phase*
 
 ---	
 
@@ -18,12 +20,12 @@ description: Boost instances have a toggle option to activate Transaction Inclus
 }	
 ```	
 
-To activate it, you can do the following:	
+To activate it, perform the following:	
 
-### Option 1: Environment Variable	
+### Option 1: Set Environment Variable	
 Set the envrionment variable **INCLUSION_LIST=true**	
 
-### Option 2: Parameter	
+### Option 2: Add Parameter	
 ```bash 	
 ./boost --inclusionlist true	
 ```
