@@ -19,28 +19,26 @@ import SearcherAuthFuture from '$img/searcher-auth-future.png';
 
 **Block Builder** - Refers to builder instance at a protocol level represented by a single address. 
 
-**Builder** - Is the organization that owns Private Keys associated with block builders. A single *builder* can own multiple private keys, and thus control multiple block builders.
+**Provider** - Is the organization that owns Private Keys associated with block builders. A single *provider* can own multiple private keys, and thus control multiple block builders.
 
-******Searcher****** - Is the entity that **currently** consumes data from the Primev network and is identified by their address.
+**User** - Is the entity that **currently** consumes data from the Primev network and is identified by their address.
 
-**Builder Boost** - The name of the client software that sits as a sidecar and allows *Builders* to enable Primev.
+**builder-boost** - The name of the client software that sits as a sidecar module and allows *providers* to enable Primev.
 
 ## Overview
 
-The technical motivation of the Primev network is to disseminate metadata about block templates (also known as execution payloads) in realtime and route them to relevant parties; in the current case these are searchers.
-
-To this end, a key starting point for the system is for builder nodes to ***relay*** templates/execution payloads to to Builder Boost, which Builder Organizations will self-host.
+A key starting point for the system is for provider nodes to ***relay*** block templates/execution payloads to to builder-boost, which providers will self-host.
 
 <img src={BuilderMods}  alt="primev" width="100%"/>
 
 
 <aside>
-Builder Boost is a sidecar that sits within the builders custody. Therefore, no raw templates are ever revealed to the Primev network.
+builder-boost is a sidecar module that sits within the providers' custody. Therefore, no raw block templates are ever revealed to the Primev network, avoiding MEV theft attack surfaces.
 
 </aside>
 
 <aside>
-🤝 There are some light trust-assumptions made with regards to the Builders. The address that a builder presents for itself, is assumed to be in it’s control.
+🤝 There are some light trust-assumptions made with regards to providers. The block builder address that a provider presents is assumed to be in its control.
 
 </aside>
 
@@ -48,7 +46,7 @@ Builder Boost is a sidecar that sits within the builders custody. Therefore, no 
 
 <img src={ActorOverview} alt="actor overview" width="100%"/>
 
-### **Interface Modification (Builder)**
+### **Block Builder Interface Modification**
 
 Example commit for Relay modifications can be seen [here](https://github.com/primevprotocol/primev-builder/commit/6d8ae9aae17a1b966ac0f682ba9843bd8746dc4f#diff-d371e466d16c4d92dff29b2806e847c619149cd6de147f1cb9ae7e9511d5da7f).
 
@@ -63,26 +61,26 @@ type IRelay interface {
 }
 ```
 
-We use the relay API to simplify the integration process for Builder Organizations. Similar to the sending of templates to Flashbots, we suggest adding a function named **`SubmitBlockPrimev`** to the relay interface of your Builder Node Implementation, so that can send payloads to Builder Boost.
+We use the relay API to simplify the integration process for providers. Similar to the sending of block to a relay, we suggest adding a function named **`SubmitBlockPrimev`** to the relay interface of your Block builder Node Implementation, so that it can send payloads to builder-boost.
 
 <aside>
-💡 The API Request to Builder Boost should look as follows:
+💡 The API Request to builder-boost should look as follows:
 1. The following header is added `X-BUILDER-TOKEN: <primev-token>` 
 2. The payload is the same as the one passed to SubmitBlockCapella
 
 </aside>
 
-### Templates Processing
+### Processing Block Templates
 
 <img src={PrimevOverview} alt="primev overview" width="100%"/>
 
 Notice in the diagram above, the flow of templates follow the following pattern:
 
-1. Templates are generated and sent to Flashbots relay to be committed
-2. Those same templates are subsequently sent to Builder Boost to have metadata extracted  
-3. Metadata is sent to the Primev network
+1. Block bids are sent to Flashbots relay
+2. Block templates are sent to builder-boost to compute execution data
+3. Execution data is sent to the Primev network
 
-## Builder Boost Overview
+## builder-boost Overview
 
 ### Directory Structure Overview
 
@@ -97,7 +95,7 @@ Notice in the diagram above, the flow of templates follow the following pattern:
 │   └── test_payloads.go
 ├── pkg
 │   ├── api.go # HTTP Server Endpoints
-│   ├── boost.go # Business Logic for builder hints extraction
+│   ├── boost.go # Business Logic to compute execution data
 │   ├── contracts # Bindings for Contract RPC Calls
 │   ├── rollup # Wrapper & Business logic to consume searcher payments data
 │   ├── service.go
@@ -108,46 +106,46 @@ Notice in the diagram above, the flow of templates follow the following pattern:
 
 The Boost API Authenticates two different types of entities:
 
-1. The Block Builder running Builder Boost
-2. Searchers
+1. The Provider running builder-boost
+2. Users
 
-### Block Builder running Builder Boost
+### Provider running builder-boost
 
-The Block Builder Node uses password based authentication to identify itself to its Builder Boost Instance. The Password should be included in the **`X-Builder-Token`** header when making a post to **`/primev/v1/builder/blocks`** to submit templates.
+The Provider uses password based authentication to identify itself to its builder-boost Instance. The Password should be included in the **`X-Builder-Token`** header when making a post to **`/primev/v1/builder/blocks`** to submit templates.
 
-Only the builder with the password set in Builder Boost Environment variable will be authorized to send blocks to Builder Boost.
+Only the provider with the password set in builder-boost Environment variable will be authorized to send blocks to builder-boost.
 
 <aside>
 ❗ Keep X-BUILDER-TOKEN private, do not share it outside your builder organization
 </aside>
 
-## Searchers Auth
+## User authentication
 
-Due to the need for privacy, searcher auth is slightly more involved. A deep dive into the process is laid out here: https://hackmd.io/AbEznH1PT4GYiX7lDjaZew
+User authentication has additional steps due to privacy requirements. You can learn more in the [user privacy section](https://docs.primev.xyz/docs/Users/userprivacy)
 
-The **Authorization** and **Authentication** are split into to parts.
+**Authorization** and **Authentication** are split into to parts.
 
-The **authorization** state of searchers is stored in the *rollup*, where as **authentication** occurs via *private key signatures.*
+The **authorization** state of users is stored in the *registry contract*, where as **authentication** occurs via *signatures.*
 
-After authenticating each other, the searcher receives a unique token that it must store in the payments contract, along with it’s payment to get authorized to receive builder hints from the block builder.
+After authenticating, the user receives a unique token that it must store in the registry contract, along with its payment to authorize its connection to receive execution data from the provider.
 
-The diagram below, showcases the high-level flow:
+The diagram below showcases the high-level flow:
 
 <img src={SearcherAuthNow} alt="searcher auth now" width="100%"/>
 
-## Optional - Dual Authentication of Builders (Coming Soon)
+## Optional - Dual Authentication of Block Builders (Coming Soon)
 
-We plan to add a step in which a Builder can provide a self-signed URL, to authenticate the URL as owning the Address being connected to (Note: This defers the security of the authentication to the DNS resolution of the URL or Public Key Infrastructure (PKI)). It would be up to the Searcher to verify the signature. However, in the current model, there is an assumed level of trust towards builders.
+We plan to add a step in which a provider can provide a self-signed URL, to authenticate the URL as owning the Address being connected to (Note: This defers the security of the authentication to the DNS resolution of the URL or Public Key Infrastructure (PKI)). It would be up to the Searcher to verify the signature. However the current model inherits existing block builder trust assumptions.
 
 <img src={SearcherAuthFuture} alt="searcher auth future" width="100%"/>
 
 ## General Security Model
 
-There’s an implied trust in Builders due to their ability to store the private bundle payloads of searchers. We make soft assumptions that the builder behaves honestly with regards to the builder hints it sends to a searcher.
+There’s an implied trust in providers due to their ability to store the private bundle payloads of searchers. The current version of builder-boost makes honesty assumptions that the provider provides correct and accurate execution data it sends to a user. We've planned a protocol integrity layer to remove these assumptions in the future.
 
-## Rollup Details
+## Registry Contract Details
 
-The Rollup can be thought of as the authorization server for the Primev protocol. It allows Builders to set minimum payment requirements to connect.
+The Registry Contract can be thought of as the authorization destination for the Primev protocol. It allows providers to set the minimum payment requirement to authorize a connection.
 
 ## Endpoints
 
@@ -157,17 +155,17 @@ The Rollup can be thought of as the authorization server for the Primev protocol
     - **Handler Function:** **`handleHealthCheck`**
 2. **Endpoint:** **`/builder`**
     - **Method:** GET
-    - **Description:** Retrieves the builder ID.
+    - **Description:** Retrieves the provider ID.
     - **Handler Function:** **`handleBuilderID`**
 3. **Endpoint:** **`/commitment`**
     - **Method:** GET
-    - **Description:** Gets the commitment to the builder by searcher address.
+    - **Description:** Gets the commitment to the provider by user address.
     - **Handler Function:** **`handleSearcherCommitment`**
 4. **Endpoint:** **`/primev/v1/builder/blocks`**
     - **Method:** POST
-    - **Description:** Submits a block for processing by the service.
+    - **Description:** Submits a block to be processed by the service.
     - **Handler Function:** **`submitBlock`**
 5. **Endpoint:** **`/ws`**
     - **Method:** GET
-    - **Description:** Establishes a WebSocket connection for a searcher to receive execution hints.
+    - **Description:** Establishes a WebSocket connection for a user to receive execution data.
     - **Handler Function:** **`ConnectedSearcher`**
