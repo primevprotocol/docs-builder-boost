@@ -6,6 +6,7 @@ description: builder-boost instances have a toggle option to activate Transactio
 # {$frontmatter.title}	
 
 {$frontmatter.description}	
+
 :::admonition type="note"
 this is an experimental feature we're collecting data on during the pilot phase
 :::
