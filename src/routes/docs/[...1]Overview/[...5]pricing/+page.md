@@ -1,12 +1,14 @@
 ---
 title: Primev Pricing
-description: Sharing builder hints within the data layer presents a revenue opportunity for Primev-enabled builders, although smaller compared to the settlement layer coming soon that will support use cases such as Pre-confirmations and Order Flow Exchanges.
+description: Sharing execution data presents a revenue opportunity for Primev providers. We anticipate future protocol upgrades to present even more compelling revenue opportunities for providers with the advent of the settlement layer.
 ---
 
 # {$frontmatter.title}
 
 {$frontmatter.description}
 
-Builders have the flexibility to define their own pricing terms when registering their address on the contract. By default, the payment is set at 0.1 ETH for a searcher to establish a connection with a builder, with an 80:20 split between the builder and the Primev protocol. In the future, integrating builders will also have a claim on the Primev portion of the funds through protocol treasury tokenization.
+Primev protocol is free to use and open source.
 
-Each connection has a predetermined duration of approximately 648,000 slots, equivalent to around 90 days. Both the payment amount and connection duration can be adjusted by enabling builders at any given time.
+Providers on the network have the flexibility to define their own pricing for users to consume data when registering their address on the Primev contract. Deposits have an 80:20 split between the provider and the Primev protocol. Primev protocol treasury will be tokenized in the future, and participating providers will gain access to protocol tokens.
+
+We suggest 0.1 ETH as the minimum deposit requirement for a duration of 216000 blocks, which is about 30 days worth. Please [see provider registry](https://docs.primev.xyz/docs/BuilderResources/Registeringoncontract#specify-builder-parameters-and-register) for details on setting registration parameters according to your preferences. The payment amount and connection duration can be adjusted by providers at any given time. If a user deposits more than the minimum amount, the subscription period will be extended in a linear fashion.
