@@ -44,7 +44,7 @@ Builder Endpoint is `<Insert-Your-Builder-Endpoint-Here>`
 
 The Authentication Token is similar to Flashbots Authentication Token [here](https://docs.flashbots.net/flashbots-auction/searchers/advanced/rpc-endpoint#authentication), but with a fixed payload of the builder address.
 
-The Authentication is passed in as a header: X-Primev-Signature, however instead of signing an arbitrary payload, the signature is made for **our builder address**, your searcher address is passed as the prefix: `<Searcher Address>:<Signature(Builder Address)>`
+The Authentication is passed in as a header: X-Primev-Signature, however instead of signing an arbitrary payload, the signature is made for **your target builder address**, your consumers wallet address is passed as the prefix: `<User Address>:<Signature(Builder Address)>`
 
 Here is a go snippet to construct the token for our service:
 
