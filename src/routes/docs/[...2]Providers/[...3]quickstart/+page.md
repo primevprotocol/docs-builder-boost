@@ -11,6 +11,7 @@ description: Run builder-boost in <5 minutes
 
 ## Pre-Requisites:
 
+- [Primev-enabled block builder](https://docs.primev.xyz/docs/Providers/buildermodifications)
 - An Ethereum address with Sepolia Eth (DM us on Twitter if you need Sepolia ETH)
 
 ## Steps:
