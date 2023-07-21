@@ -1,5 +1,5 @@
 ---
-title: Pilot Phase Details and Transition to Mainnet
+title: Pilot Phase Details
 description: Primev is under a pilot phase as of July '23 where we and early network participants are monitoring the effects of sharing execution data. While mainnet data is being shared during the pilot phase, the Registry Contract is on the Sepolia testnet so early users can test consuming execution data using Sepolia ETH.
 ---
 
