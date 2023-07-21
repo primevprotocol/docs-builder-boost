@@ -1,6 +1,6 @@
 ---
-title: Builder Modifications (15 minutes)
-description: In this document, we provide both a general overview of the small changes needed to a Geth instance to enable Primev. We will go through a standard fork of the Flashbots builder and walk through the changes that need to be made. We also provide a general overview if your Geth instance has significant changes from the Flashbots builder.
+title: Builder Modifications (~5 minutes)
+description: Below is a general overview of the minor changes needed to an Ethereum EL like geth to enable Primev. We will walk through the changes needed using a standard fork of the Flashbots builder. We also detail changes needed with commit references in case your geth instance has custom modifications.
 
 ---
 
@@ -18,20 +18,20 @@ import TemplateGeneration from '$img/block-gen.png';
 
 ### **Overview**
 
-Builder-boost sits as a sidecar to your execution client. Builder will consistently spin up lightweight go-routines to POST new templates.
+Builder-boost sits as a sidecar module to your execution client. Builder will consistently spin up lightweight go-routines to POST new block templates.
 
 <img src={TemplateGeneration} alt="block template generation" width="100%"/>
 
-# **Quickstart (5 mins)**
+## **Quickstart (5 mins)**
 
-If you want to use the off-the-shelf instance of our Builder Reference Implementation, you can follow these two steps:
+You can follow the steps below to use our reference implementation:
 
 1. Clone the repository from **[https://github.com/primevprotocol/builder-reference-primev](https://github.com/primevprotocol/builder-reference-primev)**.
 2. Build the instance and add the flag **`-builder.remote_primev_endpoint <your-builder-boost-url> --builder.primev_token <your-selected-private-token>`**.
 
-# **Advanced Instructions (optional)**
+## **[optional] Advanced Instructions**
 
-## **General Overview of Changes Needed**
+### **General Overview of Changes Needed**
 
 The idea behind the builder changes is to enable a new local “relay” to publish blocks to, in a very similar fashion to how blocks are sent to relays like flashbots, blocknative, or agnostic today.
 
@@ -49,7 +49,7 @@ You can view the entire commit for this section below.
 
 **[Commit: 9f160e8934fef1aadd21e095c432db41538b93af](https://github.com/primevprotocol/builder-reference-primev/commit/9f160e8934fef1aadd21e095c432db41538b93af)**
 
-By the end of this, you can build Geth, and you will see the following output:
+You can build Geth and you will see the following output by the end of this:
 
 ```
 bashCopy code
@@ -67,7 +67,7 @@ bashCopy code
 
 #### Step 1b. Primev auth Token
 
-The **primev auth token** is used to authorize and authenticate the builder instance. This is to ensure only your builders can post payloads to Boost.
+The **primev auth token** is used to authorize and authenticate the builder instance. This is to ensure only your block builders can post payloads to builder-boost.
 
 The following link showcases the necessary modifications to set up the Primev Auth Token:
 
@@ -77,7 +77,7 @@ We will describe below in Step 3 how to submit the request. Ensure you make the 
 
 ### **Step 2. Updating the Relay Interface to Support Block Submission to Primev/Builder Boost**
 
-In this commit, we simply add all the required function details to support updating the Relay interface to publish to Builder Boost.
+In this commit, we simply add all the required function details to support updating the Relay interface to publish to builder-boost.
 
 **[Commit: 6d8ae9aae17a1b966ac0f682ba9843bd8746dc4f](https://github.com/primevprotocol/builder-reference-primev/commit/6d8ae9aae17a1b966ac0f682ba9843bd8746dc4f)**
 
@@ -87,7 +87,7 @@ Follow the commit to add a stub for the **`testRelay`** to ensure it adheres to 
 
 **[Commit: 122e82ee6072ff2cda94ed8e75fdd861befccd19](https://github.com/primevprotocol/builder-reference-primev/commit/122e82ee6072ff2cda94ed8e75fdd861befccd19)**
 
-### **Step 3. Start Submitting Blocks to Builder Boost**
+### **Step 3. Start Submitting Blocks to builder-boost**
 
 Finally we submit the block details via a go-routine to ensure we don't block for the response:
 
