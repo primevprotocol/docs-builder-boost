@@ -44,9 +44,9 @@ Current actors are based on how the Ethereum ecosystem is positioned in 2023 wit
 
 ## Get Started
 We hope you find this documentation helpful and invite you to contribute to the protocol and docs. As a next step, you can:
-- Dive deeper into the System Overview section
-- Jump to the quickstart section for providers
-- Jump to the quickstart section for users
+- Dive deeper into the [System Overview section](https://docs.primev.xyz/docs/Overview/SystemOverview)
+- Jump to the [Quickstart section for providers](https://docs.primev.xyz/docs/Providers/quickstart)
+- Jump to the [Quickstart section for users](https://docs.primev.xyz/docs/Users/Quickstart)
 
 We look forward to having you join the Primev network!
 
