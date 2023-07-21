@@ -1,14 +1,15 @@
 ---	
 title: Transaction Inclusion List	
 description: builder-boost instances have a toggle option to activate Transaction Inclusion Lists for Users to gain early visibility into their inclusion.
-
-*this is an experimental feature we're collecting data on during the pilot phase*
-
 ---	
 
 # {$frontmatter.title}	
 
 {$frontmatter.description}	
+:::admonition type="note"
+this is an experimental feature we're collecting data on during the pilot phase
+:::
+
 
 ```javascript	
 {	
