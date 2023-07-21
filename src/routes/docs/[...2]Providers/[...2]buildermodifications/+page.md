@@ -41,9 +41,9 @@ Geth instances have the concept of an IRelay. You simply need to add a **`Submit
 
 ## **Step by Step Walkthrough**
 
-## **Step 1. Registering the Builder Boost environment variables**
+### **Step 1. Registering the Builder Boost environment variables**
 
-### Step 1a. Primev Endpoint
+#### Step 1a. Primev Endpoint
 
 You can view the entire commit for this section below.
 
@@ -65,7 +65,7 @@ bashCopy code
 
 ```
 
-### Step 1b. Primev auth Token
+#### Step 1b. Primev auth Token
 
 The **primev auth token** is used to authorize and authenticate the builder instance. This is to ensure only your builders can post payloads to Boost.
 
@@ -75,22 +75,22 @@ The following link showcases the necessary modifications to set up the Primev Au
 
 We will describe below in Step 3 how to submit the request. Ensure you make the modification to add the **`X-Builder-Token: <primev-token>`** header to the POST request that is made to Boost.
 
-## **Step 2. Updating the Relay Interface to Support Block Submission to Primev/Builder Boost**
+### **Step 2. Updating the Relay Interface to Support Block Submission to Primev/Builder Boost**
 
 In this commit, we simply add all the required function details to support updating the Relay interface to publish to Builder Boost.
 
 **[Commit: 6d8ae9aae17a1b966ac0f682ba9843bd8746dc4f](https://github.com/primevprotocol/builder-reference-primev/commit/6d8ae9aae17a1b966ac0f682ba9843bd8746dc4f)**
 
-## **Step 2a. Update interface needs for Unit Tests**
+#### **Step 2a. Update interface needs for Unit Tests**
 
 Follow the commit to add a stub for the **`testRelay`** to ensure it adheres to the new interface.
 
 **[Commit: 122e82ee6072ff2cda94ed8e75fdd861befccd19](https://github.com/primevprotocol/builder-reference-primev/commit/122e82ee6072ff2cda94ed8e75fdd861befccd19)**
 
-## **Step 3. Start Submitting Blocks to Builder Boost**
+### **Step 3. Start Submitting Blocks to Builder Boost**
 
 Finally we submit the block details via a go-routine to ensure we don't block for the response:
 
 **[Commit: 04d81efdf499ada3cee303316665edf0d5945a27](https://github.com/primevprotocol/builder-reference-primev/commit/04d81efdf499ada3cee303316665edf0d5945a27)**
 
-Voila, your builder is now a bleeding edge builder that can share hints! Not some off the shelf stock builder 😉
+Voila, your Block builder is now a bleeding edge builder that can share execution data! Not some off the shelf Block builder 😉
