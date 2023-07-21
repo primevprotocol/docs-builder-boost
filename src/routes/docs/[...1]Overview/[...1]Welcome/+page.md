@@ -3,6 +3,10 @@ title: Primev Documentation
 description: Welcome to Primev technical documentation! 
 ---
 
+# {$frontmatter.title}
+
+{$frontmatter.description}
+
 This documentation provides comprehensive information and resources to help you understand, use, and contribute to Primev. All repositories and documentation are open source and available on [Primev's github](https://github.com/primevprotocol) and we encourage community engagement and contributions to Primev.
 
 ## Introduction
