@@ -7,7 +7,7 @@ description: Start consuming execution data
 
 {$frontmatter.description}
 
-## Step 1: Obtain a Commitment Hash from your Providers
+## Step 1: Obtain a Commitment Hash from your Provider(s)
 
 1. Run your Searcher instance with the correct `SEARCHER_KEY` and `BOOST_ADDR` variables. Make sure you're taking note of the `token` parameter, which is logged when you run this instance.
 
