@@ -1,6 +1,6 @@
 ---
 title: Getting builder-boost Running In Production
-description: Get builder-boost up and running in production using the below details:
+description: Get builder-boost up and running in production using the below details
 
 ---
 
