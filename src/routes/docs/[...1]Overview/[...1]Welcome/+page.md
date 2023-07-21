@@ -21,16 +21,14 @@ For #2, a peer-to-peer network is being built. You can track progress on [the p2
 
 In the future, there will be a settlement layer to allow value related to the commitment schemes to settle. This is planned to be a rollup with federated sequencers.
 
-It's important to note that Primev will evolve as the network grows across different types of actors who leverage emerging use cases. We're constantly evolving our technical approaches in collaboration with researchers and advisors across the ecosystem. If you have a suggestion or a constructive approach, feel free to create a PR or [DM us on Twitter](https://twitter.com/primev_xyz).
-
-## Actors
+## Network Actors
 
 ### Providers
 Providers of execution services and data. These actors will integrate builder-boost, provide execution data, and provide execution services in the form of commitment signatures and enactment of execution commitments. They will be able to optimize execution over p2p across other providers.
 
 **Block builders**: specialists who accept transactions from a multitude of sources, and try to build the most profitable block possible from those transactions[^1]
 
-**Sequencers** - like a block builder, a sequencer processes transactions, produces rollup blocks, and submits rollup transactions to the L1 chain[^2]
+**Sequencers**: like a block builder, a sequencer processes transactions, produces rollup blocks, and submits rollup transactions to the L1 chain[^2]
 
 ### Users
 Users of execution services and data. These actors will open connections to providers, consume execution data, submit bid signatures for execution games.
@@ -56,13 +54,15 @@ We look forward to having you join the Primev network!
 
 For all bug reporting, feature requests, code contributions, or technical suggestions feel free to create a PR or [DM us on Twitter](https://twitter.com/primev_xyz).
 
+Primev will evolve as the network grows across different types of actors who leverage emerging use cases. We're constantly evolving our technical approaches in collaboration with researchers and advisors across the ecosystem. If you have a suggestion or a constructive approach, do reach out!
+
 ## License
 
 Builder-boost and Primev documentation is currently available under an MIT license.
 
 ## Support
 
-If you need further assistance or have any questions, feel free to [DM us on Twitter]((https://twitter.com/primev_xyz). If you want a direct communication channel you can tell us your issue and our team will can create a Telegram group with the relevant people. We're open to suggestions if you're looking for an alternative way of receiving support.
+If you need further assistance or have any questions, feel free to [DM us on Twitter](https://twitter.com/primev_xyz). If you want a direct communication channel you can tell us your issue and our team will can create a Telegram group with the relevant people. We're open to suggestions if you're looking for an alternative way of receiving support.
 
 ### References
 
