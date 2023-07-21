@@ -1,5 +1,5 @@
 ---
-title: Primev Documentation
+title: Welcome
 description: Welcome to Primev technical documentation; a comprehensive set of information and resources to help you understand, use, and contribute to Primev! 
 ---
 
