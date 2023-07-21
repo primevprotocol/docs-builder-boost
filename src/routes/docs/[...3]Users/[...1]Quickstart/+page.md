@@ -12,10 +12,9 @@ description: Start consuming execution data
     import Reg from '$img/contractreg.png';
 </script>
 
+:::steps
 
-**Step 1. First construct the Authentication Token.**
-
-The Authentication Token is similar to Flashbots Authentication Token [here](https://docs.flashbots.net/flashbots-auction/searchers/advanced/rpc-endpoint#authentication), but with a fixed payload of the builder address.
+!!!step title="Construct the Authentication Token"|description="The Authentication Token is similar to Flashbots Authentication Token but with a fixed payload of the builder address."
 
 The Authentication is passed in as a header: X-Primev-Signature, however instead of signing an arbitrary payload, the signature is made for **your target builder address**, your user address is passed as the prefix: `<User Address>:<Signature(Builder Address)>`
 
@@ -28,7 +27,9 @@ signature, err := crypto.Sign(accounts.TextHash(hash), userPrivateKey) // We use
 token := crypto.PubkeyToAddress(userPrivateKey.PublicKey).Hex() + ":" + hexutil.Encode(sig)
 ```
 
-**Step 2. Use this token to Receive a special commitment from our Builder**
+!!!
+
+!!!step title="Receive a Special Commitment"|description="Use this token to Receive a special commitment from our Builder."
 
 Make a GET request with `X-Primev-Signature: <token>` to the `/authorization` endpoint. You should receive back a payload as follows:
 
@@ -38,29 +39,32 @@ Make a GET request with `X-Primev-Signature: <token>` to the `/authorization` en
 }
 ```
 
+!!!
 
-**Step 3. Connect to the Builder via WebSockets**
+!!!step title="Open Primev Contract in Etherscan"|description=""
 
-Make a GET Request `X-Primev-Signature: <token>` to the `/ws` endpoint
+Go to the Deposit Method on Etherscan. This method allows you to deposit a stake for a specific builder on behalf of the user wallet.
 
-**Congrats! You should be connected!**
-This is your commitment hash.
+!!!
 
-## Step 2: Open Primev Contract in Etherscan
+!!!step title="Connect Web3 Wallet"|description="To protect your privacy, we recommend you connect with a different wallet from the user wallet you will use to consume data"
 
-1. Go to the [Deposit Method](https://sepolia.etherscan.io/address/0x6219a236EFFa91567d5ba4a0A5134297a35b0b2A#writeContract#F1) on Etherscan. This method allows you to deposit a stake for a specific builder on behalf of the user wallet.
+At the top left corner of the 'Write Contract' section, click on 'Connect to Web3'. Make sure you're using the builder address that you used for running the builder geth instance. This address should have some Sepolia ETH to cover transaction costs.
 
-## Step 3: Connect Web3 Wallet
+!!!
 
-1. At the top left corner of the "Write Contract" section, click on "Connect to Web3".
-2. Make sure you're using the builder address that you used for running the builder geth instance. This address should have some Sepolia ETH to cover transaction costs.
+!!!step title="Specify Deposit Parameters and Send Transaction"|description="After the transaction is confirmed, the user will be able to receive builder hints."
 
-## Step 4: Specify Deposit Parameters and Send Transaction
+In the `deposit` method, you need to fill in 3 fields: `payableAmount`, `_builder`, and `_commitment`. After you have filled in all the necessary fields, click on the 'Write' button. Confirm the transaction using your Web3 provider. 
+
 <img src={Reg} alt="Registration flow on contract" width="100%"/>
 
-1. In the `deposit` method, you need to fill in 3 fields:
-   - `payableAmount`: Enter the amount of stake you wish to deposit for the specific builder.
-   - `_builder`: Enter the builder address.
-   - `_commitment`: Enter the commitment hash obtained in Step 1.
-2. After you have filled in all the necessary fields, click on the "Write" button.
-3. Confirm the transaction using your Web3 provider. After the transaction is confirmed, the user will be able to receive builder hints.
+
+!!!
+
+!!!step title="Connect to the Builder via WebSockets"|description="Connect to the Builder via WebSockets."
+
+Make a GET Request `X-Primev-Signature: <token>` to the `/ws` endpoint. Congrats! You should be connected! This is your commitment hash.
+
+!!!
+:::
