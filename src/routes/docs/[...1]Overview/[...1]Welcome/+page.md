@@ -1,8 +1,8 @@
 # Primev Documentation
 
-Welcome to Primev technical documentation! 
+Welcome to Primev technical documentation; a comprehensive set of information and resources to help you understand, use, and contribute to Primev! 
 
-This documentation provides comprehensive information and resources to help you understand, use, and contribute to Primev. All repositories and documentation are open source and available on [Primev's github](https://github.com/primevprotocol) and we encourage community engagement and contributions to Primev.
+All repositories and documentation are open source and available on [Primev's github](https://github.com/primevprotocol) and we encourage community engagement and contributions to Primev.
 
 ## Introduction
 
