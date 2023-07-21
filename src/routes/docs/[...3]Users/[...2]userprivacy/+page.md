@@ -1,6 +1,6 @@
 ---
-title: Searcher Privacy
-description: We take the privacy of Searchers seriously at Primev.
+title: User Privacy
+description: Primev provides a simple cryptographic mechanism to abstract user address and connection privacy from external parties.
 ---
 
 # {$frontmatter.title}
@@ -12,17 +12,15 @@ description: We take the privacy of Searchers seriously at Primev.
 import SecurityDiagram from '$img/searcher-privacy-diagram.png';
 </script>
 
-We’ve designed our protocol to protect the privacy of searchers in two fold:
+Primev protocol protects user privacy under two different contexts:
 
 - Identity & connection privacy
 
 - Bundle & transaction privacy
 
-That’s why our protocol consists of a variety of controls to ensure pseudonymity for searchers.
+## User Privacy
 
-## Searcher Privacy
-
-Primev contracts store data that can be leveraged to get a sense of which builders and searchers are connected. To control for this we’ve implemented the following simple commitment mechanism to protect the privacy of searchers
+Primev contracts store data that could otherwise be leveraged to get a sense of which builders and searchers are connected. To control for this we’ve implemented the following simple commitment mechanism to protect user privacy:
 ```
 $$
 c = commit{}(PrivKey_{builder} || address_{searcher})
