@@ -4,7 +4,11 @@
   import '@svelteness/kit-docs/client/styles/fonts.css';
   import '@svelteness/kit-docs/client/styles/theme.css';
   import '@svelteness/kit-docs/client/styles/vars.css';
+  import '@docsearch/css'; // Must come first.
+  import '@svelteness/kit-docs/client/styles/docsearch.css';
 
+
+  import { Algolia } from '@svelteness/kit-docs/client/algolia'
 
   import { page } from '$app/stores';
   import PrimevLogo from '$img/favicon.png';
@@ -42,20 +46,27 @@
 </svelte:head>
 
 <KitDocs {meta}>
-  <KitDocsLayout {navbar} {sidebar}>
+  <KitDocsLayout {navbar} {sidebar} search>
     <div class="logo" slot="navbar-left">
       <Button href="/">
         <img src={PrimevLogo} alt="primev" width="100"/>
       </Button>
     </div>
-
-    <slot />
+    <Algolia
+    apiKey="599cec31baffa4868cae4e79f180729b"
+    appId="R2IYF7ETH7"
+    indexName="docsearch"
+    placeholder="Search documentation"
+    slot="search"
+  />
     <div slot="navbar-right-alt">
       <div class="flex items-center">
         <SocialLink type="twitter" href="//twitter.com/primev_xyz" class="socialIcon" />
         <SocialLink type="gitHub" href="//github.com/primevprotocol" class="socialIcon" />
       </div>
     </div>
+    <slot />
+    
   </KitDocsLayout>
 </KitDocs>
 

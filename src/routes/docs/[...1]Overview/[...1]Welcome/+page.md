@@ -13,7 +13,7 @@ All repositories and documentation are open source and available on [Primev's gi
 
 Primev is a real time p2p network for MEV actors. The network has 2 primary purposes:
 1. To share and consume execution data
-2. To engage in commitment schemes for execution "execution games" in the form of signatures
+2. To engage in commitment schemes for "execution games" in the form of signatures
 
 For #1, execution data is shared over websocket connections to users. This is available today.
 
