@@ -9,7 +9,7 @@
   import { page } from '$app/stores';
   import PrimevLogo from '$img/favicon.png';
 
-  import { Button, KitDocs, KitDocsLayout, createSidebarContext } from '@svelteness/kit-docs';
+  import { Button, KitDocs, KitDocsLayout, createSidebarContext, SocialLink } from '@svelteness/kit-docs';
 
   /** @type {import('./$types').LayoutData} */
   export let data;
@@ -18,7 +18,9 @@
 
   /** @type {import('@svelteness/kit-docs').NavbarConfig} */
   const navbar = {
-    links: [{ title: 'Documentation', slug: '/docs', match: /\/docs/ }],
+    links: [
+      // { title: 'Documentation', slug: '/docs', match: /\/docs/ }
+    ],
   };
 
   const { activeCategory } = createSidebarContext(sidebar);
@@ -48,6 +50,12 @@
     </div>
 
     <slot />
+    <div slot="navbar-right-alt">
+      <div class="flex items-center">
+        <SocialLink type="twitter" href="//twitter.com/primev_xyz" class="socialIcon" />
+        <SocialLink type="gitHub" href="//github.com/primevprotocol" class="socialIcon" />
+      </div>
+    </div>
   </KitDocsLayout>
 </KitDocs>
 
