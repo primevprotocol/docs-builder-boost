@@ -1,5 +1,5 @@
 ---
-title: builder-boost Quickstart Guide
+title: Tutorial for running builder-boost locally
 description: Run builder-boost in <5 minutes
 
 ---

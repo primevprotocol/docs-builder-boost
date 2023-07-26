@@ -1,6 +1,6 @@
 ---
-title: Using Primev Builder Test Endpoint
-description: Searchers can use test Primev Builder endpoint to access payloads. Endpoint is located under https://boost.primev.xyz/builder
+title: How to test builder-boost with dummy users
+description: You can use run dummy users on your builder-boost to test for effective setup and monitoring.
 ---
 
 # {$frontmatter.title}
@@ -10,7 +10,7 @@ description: Searchers can use test Primev Builder endpoint to access payloads. 
 
 **Running a Test Searcher instance using test binary:**
 
-1. Clone https://github.com/primevprotocol/builder-boost repo and change working directory to it
+1. If you haven't already: Clone https://github.com/primevprotocol/builder-boost repo and change working directory to it
 2. Run `make build` to build searcher binary
 3. Run searcher instance replacing `a1b2c3` with your searcher private key:
     

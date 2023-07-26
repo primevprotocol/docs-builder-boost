@@ -1,10 +1,10 @@
 ---
-title: Builder Modifications (~5 minutes)
+title: How to Modify A Block Builder for Primev 
 description: Below is a general overview of the minor changes needed to an Ethereum EL like geth to enable Primev. We will walk through the changes needed using a standard fork of the Flashbots builder. We also detail changes needed with commit references in case your geth instance has custom modifications.
 
 ---
 
-# {$frontmatter.title}
+# {$frontmatter.title} (~5 minutes)
 
 {$frontmatter.description}
 

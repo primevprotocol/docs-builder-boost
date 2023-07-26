@@ -1,5 +1,5 @@
 ---
-title: Template Searcher Documentation
+title: How to write User Documentation as a provider running builder-boost
 description: Once you’re up and ready with an instance of Boost, we recommend you create a set of documentation for searchers to easily connect to you. The following is a standard template you can fill in with your network configurations.
 
 ---

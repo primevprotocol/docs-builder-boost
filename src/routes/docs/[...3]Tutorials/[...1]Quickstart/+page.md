@@ -1,6 +1,6 @@
 ---
-title: User Quickstart
-description: Start consuming execution data
+title: Start consuming Execution Data from Sandbox Environment
+description: We will walk you through a quick tutorial on how to connect to our sandbox environment and start consuming execution data!
 ---
 
 # {$frontmatter.title}

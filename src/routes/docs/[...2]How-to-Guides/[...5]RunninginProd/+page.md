@@ -1,6 +1,6 @@
 ---
-title: Getting builder-boost Running In Production
-description: Get builder-boost up and running in production using the below details
+title: How to get builder-boost running In Production
+description: We delve into the details of how to set up builder-boost for production operations
 
 ---
 
@@ -12,10 +12,6 @@ description: Get builder-boost up and running in production using the below deta
     import BBDiagram from '$img/builder-boost-diagram.png';
     import Security from '$img/Security.png';
 </script>
-
-# Running builder-boost
-
-builder-boost is a software sidecar module that facilitates a provider’s participation in the Primev network. The diagram below outlines the module’s position within a provider's local environment.
 
 ## **builder-boost Diagram**
 
@@ -104,19 +100,3 @@ We recommend you run this on a standalone server. This means if you’re running
 ## How many instances of builder-boost should I run?
 
 Currently you can only run a single instance of builder-boost. We will release an update that will allow builders to run multiple builder-boost instances in the future. The stateful nature of open connections between searchers and builders creates a restriction in the current version.
-
-## How secure and private is my block template when it’s sent to builder-boost?
-
-### Confidentiality
-
-A key reason of builder-boost's architecture as a sidecar module in the builder’s own environment is to ensure the privacy of block templates and the underlying bundle & transaction data, and having the provider have ultimate control over what's being shared and how.
-
-### Integrity
-
-To ensure the integrity of the payloads that are being constructed we’ve implemented a shared secret authentication between the builder and the builder-boost instance. As long as the the Builder constructs a **secure password and keeps it secret**, the setup gives strong assurances over the integrity of the payloads being published and the metadata being sent to searchers.
-
-<img src={Security} alt="Security Diagram" width="100%"/>
-
-### Availability Provisions
-
-Staleness of the payloads is the key considerations when considering the payload being sent to searchers. We recommend setting up some forms of DDOS protection offered by Cloudflare to ensure you

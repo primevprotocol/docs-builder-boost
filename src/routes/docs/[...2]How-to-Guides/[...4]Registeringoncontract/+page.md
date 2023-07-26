@@ -1,5 +1,5 @@
 ---
-title: Registering to Primev Contract
+title: How to Register Builder to Primev Contract
 description: You must register your builder-boost instance on the Primev contract to enable authorized connections and generate revenue from providing execution data.
 
 ---
