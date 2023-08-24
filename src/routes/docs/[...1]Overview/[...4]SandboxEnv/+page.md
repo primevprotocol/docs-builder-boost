@@ -9,7 +9,7 @@ description: You can play around with a live instance of builder-boost.
 
 Primev Builder Boost Sandbox: https://boost.primev.xyz/builder
 
-The sandbox environment allows you to explore what it's like to own or connect to a builder-boost instance. It currently has a data feed from a modified Geth instance generating templates for flashbots. The `X-Builder-Token` for it is `tmptoken`
+The sandbox environment allows you to explore what it's like to own or connect to a builder-boost instance. The data feed is from a vanilla block builder with no private bundles. The `X-Builder-Token` for it is `tmptoken`
 
 - **List of Curl Commands**
     
