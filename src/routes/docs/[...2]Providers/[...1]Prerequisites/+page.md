@@ -1,5 +1,5 @@
 ---
-title: Software & Hardware Pre-Requistes
+title: Software & Hardware Pre-Requisites
 description: Overview of software and hardware requirements needed to participate in the Primev Network.
 ---
 
