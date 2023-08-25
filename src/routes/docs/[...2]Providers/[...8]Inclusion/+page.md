@@ -25,7 +25,7 @@ this is an experimental feature we're collecting data on during the pilot phase
 To activate it, perform the following:	
 
 ### Option 1: Set Environment Variable	
-Set the envrionment variable **INCLUSION_LIST=true**	
+Set the environment variable **INCLUSION_LIST=true**	
 
 ### Option 2: Add Parameter	
 ```bash 	

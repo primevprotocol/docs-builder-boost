@@ -18,10 +18,10 @@ On the top left corner of the **Write Contract** section press **Connect to Web3
 
 ## Specify Builder Parameters and Register
 
-In the `updateBuilder` method there are 2 fields to specify:
+In the `updateBuilder` method there are two fields to specify:
 
 - `_minimalStake`: minimal amount of ETH for a user to deposit to in order to authorize a connection. We suggest 0.1 ETH as a minimum.
-- `_minimalSubscriptionPeriod`: minimal subscription period in blocks. We suggest 216000 blocks, which is about 30 days worth. If the user deposits more than the minimum amount, the subscription period will be extended in a linear fashion.
+- `_minimalSubscriptionPeriod`: minimal subscription period in blocks. We suggest 216,000 blocks, which is about 30 days worth. If the user deposits more than the minimum amount, the subscription period will be extended in a linear fashion.
 
 After all the required fields are specified, press the **Write** button and sign the transaction using your Web3 provider. Once the transaction is confirmed, users can start connecting to a provider. Make sure you run the builder-boost instance before registering a new provider.
     

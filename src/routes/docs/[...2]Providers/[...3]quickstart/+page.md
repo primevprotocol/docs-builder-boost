@@ -1,6 +1,6 @@
 ---
 title: builder-boost Quickstart Guide
-description: Run builder-boost in <5 minutes
+description: Run builder-boost in less than 5 minutes
 
 ---
 
@@ -12,7 +12,7 @@ description: Run builder-boost in <5 minutes
 ## Pre-Requisites:
 
 - [Primev-enabled block builder](https://docs.primev.xyz/docs/Providers/buildermodifications)
-- An Ethereum address with Sepolia Eth (DM us on Twitter if you need Sepolia ETH)
+- An Ethereum address with Sepolia ETH (DM us on Twitter if you need Sepolia ETH)
 
 ## Steps:
 
@@ -21,7 +21,7 @@ description: Run builder-boost in <5 minutes
 3. `$ make all`
 4. `$ ./boost --rollupkey <your-private-key> --buildertoken <secret-password>`
 
-The `<private-key>` is the key associated with your payments account in the primev protocol. It should contain some Sepolia Eth to allow transactions to be sent.
+The `<your-private-key>` is the key associated with your payments account in the primev protocol. It should contain some Sepolia Eth to allow transactions to be sent.
 
 The `<secret-password>` is the secret value sent in the `X-Builder-Token` header from Builder and is used to authenticate your personal Block Builder Nodes.
 
