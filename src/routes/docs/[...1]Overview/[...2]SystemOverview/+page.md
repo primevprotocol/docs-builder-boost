@@ -17,17 +17,17 @@ import SearcherAuthFuture from '$img/searcher-auth-future.png';
 
 ## Terminology
 
-**Block Builder** - Refers to builder instance at a protocol level represented by a single address. 
+**Block Builder** - Refers to a builder instance at a protocol level represented by a single address. 
 
-**Provider** - Is the organization that owns Private Keys associated with block builders. A single *provider* can own multiple private keys, and thus control multiple block builders.
+**Provider** - is the organization that owns private keys associated with block builders. A single *provider* can own multiple private keys, and thus control multiple block builders.
 
-**User** - Is the entity that **currently** consumes data from the Primev network and is identified by their address.
+**User** - is the entity that **currently** consumes data from the Primev network and is identified by their address.
 
 **builder-boost** - The name of the client software that sits as a sidecar module and allows *providers* to enable Primev.
 
 ## Overview
 
-A key starting point for the system is for provider nodes to ***relay*** block templates/execution payloads to to builder-boost, which providers will self-host.
+A key starting point for the system is for provider nodes to ***relay*** block templates/execution payloads to builder-boost, which providers will self-host.
 
 <img src={BuilderMods}  alt="primev" width="100%"/>
 
@@ -38,7 +38,7 @@ builder-boost is a sidecar module that sits within the providers' custody. There
 </aside>
 
 <aside>
-🤝 There are some light trust-assumptions made with regards to providers. The block builder address that a provider presents is assumed to be in its control.
+🤝 There are some light trust assumptions made with regards to providers. The block builder address that a provider presents is assumed to be in its control.
 
 </aside>
 
@@ -121,9 +121,9 @@ Only the provider with the password set in builder-boost Environment variable wi
 
 ## User authentication
 
-User authentication has additional steps due to privacy requirements. You can learn more in the [user privacy section](https://docs.primev.xyz/docs/Users/userprivacy)
+User authentication has additional steps due to privacy requirements. You can learn more in the [user privacy section](https://docs.primev.xyz/docs/Users/userprivacy).
 
-**Authorization** and **Authentication** are split into to parts.
+**Authorization** and **Authentication** are split into two parts.
 
 The **authorization** state of users is stored in the *registry contract*, where as **authentication** occurs via *signatures.*
 
@@ -141,11 +141,11 @@ We plan to add a step in which a provider can provide a self-signed URL, to auth
 
 ## General Security Model
 
-There’s an implied trust in providers due to their ability to store the private bundle payloads of searchers. The current version of builder-boost makes honesty assumptions that the provider provides correct and accurate execution data it sends to a user. We've planned a protocol integrity layer to remove these assumptions in the future.
+There’s an implied trust in providers due to their ability to store the private bundle payloads of searchers. The current version of builder-boost makes honesty assumptions that the provider provides correct and accurate execution data it sends to a user. The Primev team has planned a protocol integrity layer to remove these assumptions in the future.
 
 ## Registry Contract Details
 
-The Registry Contract can be thought of as the authorization destination for the Primev protocol. It allows providers to set the minimum payment requirement to authorize a connection.
+The registry contract can be thought of as the authorization destination for the Primev protocol. It allows providers to set the minimum payment requirement to authorize a connection.
 
 ## Endpoints
 
