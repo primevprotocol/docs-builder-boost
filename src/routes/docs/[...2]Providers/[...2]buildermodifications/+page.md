@@ -1,6 +1,6 @@
 ---
 title: Builder Modifications (~5 minutes)
-description: Below is a general overview of the minor changes needed to an Ethereum EL like geth to enable Primev. We will walk through the changes needed using a standard fork of the Flashbots builder. We also detail changes needed with commit references in case your geth instance has custom modifications.
+description: Below is a general overview of the minor changes needed to an Ethereum Execution Client like geth to enable Primev. We will walk through the changes needed using a standard fork of the Flashbots builder. We also detail changes needed with commit references in case your geth instance has custom modifications.
 
 ---
 
@@ -18,7 +18,7 @@ import TemplateGeneration from '$img/block-gen.png';
 
 ### **Overview**
 
-Builder-boost sits as a sidecar module to your execution client. Builder will consistently spin up lightweight go-routines to POST new block templates.
+Builder-boost sits as a sidecar module to your execution client. The builder will consistently spin up lightweight go-routines to POST new block templates.
 
 <img src={TemplateGeneration} alt="block template generation" width="100%"/>
 
@@ -33,7 +33,7 @@ You can follow the steps below to use our reference implementation:
 
 ### **General Overview of Changes Needed**
 
-The idea behind the builder changes is to enable a new local “relay” to publish blocks to, in a very similar fashion to how blocks are sent to relays like flashbots, blocknative, or agnostic today.
+The idea behind the builder changes is to enable a new local “relay” to publish blocks to, in a fashion similar to how blocks are sent to relays like flashbots, blocknative, or agnostic today.
 
 Below is a more detailed perspective of the standard flow in the Flashbots builder. We add a command of **`go SubmitBlockPrimev(&blockData)`** in the SubmitBlock section.
 
@@ -52,7 +52,6 @@ You can view the entire commit for this section below.
 You can build Geth and you will see the following output by the end of this:
 
 ```
-bashCopy code
 **WARN [timestamp] Remote Primev Endpoint is not Set, payloads will not be sent to Primev Network**
 
 ```
@@ -60,12 +59,11 @@ bashCopy code
 If you set the correct environment variable **`BUILDER_REMOTE_PRIMEV_ENDPOINT`** or pass in the flag **`builder.remote_primev_endpoint`** while running Geth, you'll see the following successful message:
 
 ```
-bashCopy code
 **INFO [timestamp] Remote Primev Endpoint is Set, payloads will be sent to Primev Network endpoint=<Your builder boost URL>**
 
 ```
 
-#### Step 1b. Primev auth Token
+#### Step 1b. Primev Auth Token
 
 The **primev auth token** is used to authorize and authenticate the builder instance. This is to ensure only your block builders can post payloads to builder-boost.
 
@@ -89,7 +87,7 @@ Follow the commit to add a stub for the **`testRelay`** to ensure it adheres to 
 
 ### **Step 3. Start Submitting Blocks to builder-boost**
 
-Finally we submit the block details via a go-routine to ensure we don't block for the response:
+Finally, we submit the block details via a go-routine to ensure we don't block for the response:
 
 **[Commit: 04d81efdf499ada3cee303316665edf0d5945a27](https://github.com/primevprotocol/builder-reference-primev/commit/04d81efdf499ada3cee303316665edf0d5945a27)**
 
