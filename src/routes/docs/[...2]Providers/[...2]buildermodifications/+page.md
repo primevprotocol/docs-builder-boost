@@ -63,7 +63,7 @@ If you set the correct environment variable **`BUILDER_REMOTE_PRIMEV_ENDPOINT`**
 
 ```
 
-#### Step 1b. Primev Primev Auth Token
+#### Step 1b. Primev Auth Token
 
 The **primev auth token** is used to authorize and authenticate the builder instance. This is to ensure only your block builders can post payloads to builder-boost.
 
