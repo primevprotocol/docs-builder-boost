@@ -7,15 +7,15 @@ description: Welcome to Primev technical documentation; a comprehensive set of i
 
 {$frontmatter.description}
 
-All repositories and documentation are open source and available on [Primev's github](https://github.com/primevprotocol) and we encourage community engagement and contributions to Primev.
+All repositories and documentation are open source and available on [Primev's GitHub](https://github.com/primevprotocol) and we encourage community engagement and contributions to Primev.
 
 ## Introduction
 
-Primev is a real time p2p network for MEV actors. The network has 2 primary purposes:
+Primev is a real-time p2p network for MEV actors. The network has 2 primary purposes:
 1. To share and consume execution data
-2. To engage in commitment schemes for execution "execution games" in the form of signatures
+2. To engage in commitment schemes for "execution games" in the form of signatures
 
-For #1, execution data is shared over websocket connections to users. This is available today.
+For #1, execution data is shared over WebSocket connections to users. This is available today.
 
 For #2, a peer-to-peer network is being built. You can track progress on [the p2p branch](https://github.com/primevprotocol/builder-boost/tree/iowar/p2p) of builder-boost. This will be merged with the main branch as the first bid/commit use case goes live.
 
@@ -62,7 +62,7 @@ Builder-boost and Primev documentation is currently available under an MIT licen
 
 ## Support
 
-If you need further assistance or have any questions, feel free to [DM us on Twitter](https://twitter.com/primev_xyz). If you want a direct communication channel you can tell us your issue and our team will can create a Telegram group with the relevant people. We're open to suggestions if you're looking for an alternative way of receiving support.
+If you need further assistance or have any questions, feel free to [DM us on Twitter](https://twitter.com/primev_xyz). If you want a direct communication channel you can tell us your issue and our team will create a Telegram group with the relevant people. We're open to suggestions if you're looking for an alternative way of receiving support.
 
 ### References
 
