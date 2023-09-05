@@ -23,7 +23,7 @@ Primev protocol protects user privacy under two different contexts:
 Primev contracts store data that could otherwise be leveraged to get a sense of which builders and searchers are connected. To control for this we’ve implemented the following simple commitment mechanism to protect user privacy:
 ```
 $$
-c = commit{}(PrivKey_{builder} || address_{searcher})
+c = commit{}(PubKey_{builder} || address_{searcher})
 $$
 ```
 c is the commitment that get’s added to the rollup. A more detailed flow of data is highlighted below:
@@ -43,6 +43,6 @@ $$
 true/false := verify(c, Privkey_{builder}, address_{searcher})
 $$
 ```
-Through this scheme we can ensure that entity in the system can learn more about the searcher <> builder relationships than the ones they are party to.
+Through this scheme we can ensure that no entity in the system can learn more about the searcher <> builder relationships than the ones they are party to.
 
-We’ve also architected builder-boost as a side-car module to ensure block data remains in the builder’s environment, and existing trust relationships between searchers and builders aren’t broken.
+We’ve also architected builder-boost as a sidecar module to ensure block data remains in the builder’s environment, and existing trust relationships between searchers and builders continue to hold.
