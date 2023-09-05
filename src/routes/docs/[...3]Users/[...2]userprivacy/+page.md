@@ -43,6 +43,6 @@ $$
 true/false := verify(c, Privkey_{builder}, address_{searcher})
 $$
 ```
-Through this scheme we can ensure that entity in the system can learn more about the searcher <> builder relationships than the ones they are party to.
+Through this scheme we can ensure that no entity in the system can learn about more searcher <> builder relationships than the ones they are party to.
 
-We’ve also architected builder-boost as a side-car module to ensure block data remains in the builder’s environment, and existing trust relationships between searchers and builders aren’t broken.
+We’ve also architected builder-boost as a sidecar module to ensure block data remains in the builder’s environment, and existing trust relationships between searchers and builders continue to hold.
