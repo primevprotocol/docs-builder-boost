@@ -23,7 +23,7 @@ Primev protocol protects user privacy under two different contexts:
 Primev contracts store data that could otherwise be leveraged to get a sense of which builders and searchers are connected. To control for this we’ve implemented the following simple commitment mechanism to protect user privacy:
 ```
 $$
-c = commit{}(PubKey_{builder} || address_{searcher})
+c = commit{}(PrivKey_{builder} || address_{searcher})
 $$
 ```
 c is the commitment that get’s added to the rollup. A more detailed flow of data is highlighted below:
