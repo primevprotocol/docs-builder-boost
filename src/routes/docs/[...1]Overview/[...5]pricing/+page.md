@@ -1,13 +1,14 @@
 ---
 title: Primev Pricing
-description: Sharing execution data presents a revenue opportunity for Primev providers. We anticipate future protocol upgrades to present even more compelling revenue opportunities for providers with the advent of the settlement layer.
 ---
 
 # {$frontmatter.title}
 
 {$frontmatter.description}
 
-Primev protocol is free to use and open source.
+Primev protocol is free to use and open source. Providers on the network may charge fees to users, and users may include bids in their messages to incentivize providers.
+
+Users on the network may deposit any amount of ETH to a provider to authorize their connection to consume execution data. For most providers this value will be a minimum of **0.1 ETH**.
 
 Providers on the network have the flexibility to define their own pricing for users to consume data when registering their address on the Primev contract. Deposits have an 80:20 split between the provider and the Primev protocol. Primev protocol treasury will be tokenized in the future, and participating providers will gain access to protocol tokens.
 
