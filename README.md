@@ -1,6 +1,4 @@
-# Primev documentation
-
-Everything Primev in one open-source repo, renders here: [Primev Documentation](https://docs.primev.xyz/).
+# Documentation for builder-boost
 
 ## Contribution guide
 
